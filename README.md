@@ -3,7 +3,7 @@
 
 Sistema web desenvolvido como Projeto Integrador do 3º semestre, com o objetivo de organizar e facilitar o gerenciamento de agendamentos de oitivas em uma delegacia especializada.
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 Atualmente, o agendamento de oitivas pode ser realizado por meio de agendas físicas, planilhas ou aplicativos de mensagens, dificultando o controle de horários e aumentando o risco de conflitos de pauta e retrabalho.
 
@@ -15,11 +15,11 @@ O sistema contempla três tipos de envolvidos:
 - **Testemunha:** registro de depoimento de testemunha.
 - **Investigado:** agendamento de oitiva de investigado.
 
-## 🎯 Objetivo
+## Objetivo
 
 Desenvolver uma aplicação web que permita agendar, consultar, remarcar e cancelar oitivas de maneira simples, intuitiva e organizada, reduzindo conflitos de horários e o trabalho manual.
 
-## 🖥️ Interface do sistema
+## Interface do sistema
 
 A interface foi desenvolvida com foco em simplicidade, organização e facilidade de utilização.
 
@@ -43,7 +43,7 @@ A tela principal apresenta duas áreas:
 - Indicadores de quantidade de oitivas e vagas disponíveis.
 - Navegação entre períodos.
 
-## ⚙️ Funcionalidades previstas
+## Funcionalidades previstas
 
 - [x] Estrutura visual da tela de agendamento.
 - [x] Formulário de cadastro de oitivas.
@@ -57,7 +57,7 @@ A tela principal apresenta duas áreas:
 - [ ] Pesquisar oitivas por responsável.
 - [ ] Atualizar automaticamente os horários disponíveis.
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 | Tecnologia | Finalidade |
 |---|---|
@@ -66,11 +66,9 @@ A tela principal apresenta duas áreas:
 | JavaScript | Lógica, interatividade e gerenciamento dos agendamentos |
 | LocalStorage | Armazenamento dos dados no navegador |
 
-O projeto prevê a utilização do LocalStorage, dispensando inicialmente a necessidade de um banco de dados externo.
+## Orientações para o desenvolvimento JavaScript
 
-## 📋 Orientações para o desenvolvimento JavaScript
-
-Esta seção apresenta os requisitos que precisam ser implementados para integrar o JavaScript à interface desenvolvida.
+Esta seção apresenta os requisitos que precisam ser implementados para integrar o JavaScript, caso desejem seguir com a forma que foi feita.
 
 ### 1. Cadastro de oitivas
 
@@ -127,9 +125,7 @@ O JavaScript deverá ser integrado à interface existente, preservando:
 - A organização do formulário e do calendário.
 - A identidade visual do SAO.
 
-**Importante:** a implementação deve aproveitar a estrutura HTML e CSS já desenvolvida, evitando reconstruir a interface sem necessidade.
-
-## 👥 Integrantes do grupo
+## Integrantes do grupo
 
 - Alessander da Silva Oliveira Junior
 - Sabrina de Oliveira Zago Capanema
@@ -138,9 +134,3 @@ O JavaScript deverá ser integrado à interface existente, preservando:
 - João Marcos Ribeiro da Silva
 - Victor Rafael Soares de Almeida
 - Rafael Santos Rodrigues
-
-## 📚 Projeto Integrador — 3º Semestre
-
-Desenvolvimento de uma aplicação web utilizando boas práticas de desenvolvimento de software.
-
-**SAO — Sistema de Agendamento de Oitivas.**
