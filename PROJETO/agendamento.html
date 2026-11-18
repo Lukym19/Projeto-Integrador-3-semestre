@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAO - Sistema de Agendamento de Oitivas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="agendamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="abreviacao">
+            <strong>SAO</strong>
+            <span></span>
+            <p>Sistema de Agendamento<br> de Oitivas</p>
+        </div>
+    </header>
+    <main class="pagina">
+        <section class="introducao">
+            <div>
+                <p class="subtitulo">CONTROLE DE AGENDAMENTOS</p>
+                <h1>Agendamento de Oitivas</h1>
+            </div>
+        </section>
+        <div class="formulario">
+            <section class="formulario-card">
+                <div class="titulo-card">
+                    <h2>Nova Oitiva</h2>
+                    <p>Preencha os dados para adicionar uma nova oitiva.</p>
+                </div>
+                <form id="form-agendamento">
+                    <div class="campo">
+                        <label for="nome">Nome <b>*</b></label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" required>
+                    </div>
+                    <fieldset class="campo-tipo">
+                        <legend>Papel do envolvido <b>*</b></legend>
+                        <label class="tipo-vitima" for="vitima">
+                            <input type="radio" id="vitima" name="tipo" value="Vítima" required>
+                            <span class="bolinha"></span>
+                            <span><strong>Vítima</strong><small>Atendimento à vítima</small></span>
+                        </label>
+                        <label class="tipo-testemunha" for="testemunha">
+                            <input type="radio" id="testemunha" name="tipo" value="Testemunha">
+                            <span class="bolinha"></span>
+                            <span><strong>Testemunha</strong><small>Relato de testemunha</small></span>
+                        </label>
+                        <label class="tipo-investigado" for="investigado">
+                            <input type="radio" id="investigado" name="tipo" value="Investigado">
+                            <span class="bolinha"></span>
+                            <span><strong>Investigado</strong><small>Oitiva de investigado</small></span>
+                        </label>
+                    </fieldset>
+                    <div class="linha-campos">
+                        <div class="campo">
+                            <label for="data">Data da oitiva <b>*</b></label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
+                        <div class="campo">
+                            <label for="horario">Horário <b>*</b></label>
+                            <input type="time" id="horario" name="horario" required>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="responsavel">Responsável <b>*</b></label>
+                        <input type="text" id="responsavel" name="responsavel" placeholder="Nome do servidor responsável" required>
+                    </div>
+                    <p class="obrigatorios"><b>*</b> Campos obrigatórios</p>
+                    <button type="submit" class="botao-adicionar">+ &nbsp; ADICIONAR OITIVA</button>
+                </form>
+            </section>
+            <section class="calendario-card">
+                <div class="cabecalho-calendario">
+                    <div class="titulo-card">
+                        <div class="icone-ca"><i class="fa-regular fa-calendar"></i></div>
+                        <div>
+                            <h2>Calendário de oitivas</h2>
+                            <p>Visualize as datas e horários dos atendimentos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumo-semana">
+                    <div>
+                        <small>TOTAL NA SEMANA</small>
+                        <strong id="total-semana">- oitivas</strong>
+                    </div>
+                    <div>
+                        <small>PERÍODO</small>
+                        <strong id="periodo-semana">--/-- a --/--</strong>
+                    </div>
+                    <div>
+                        <small>VAGAS LIVRES</small>
+                        <strong id="vagas-semana">-- horários disponiveis</strong>
+                    </div>
+                </div>
+                <div class="controles-calendario">
+                    <div class="legenda">
+                        <span><i class="ponto-vitima"></i>Vítima</span>
+                        <span><i class="ponto-testemunha"></i>Testemunha</span>
+                        <span><i class="ponto-investigado"></i>Investigado</span>
+                    </div>
+                    <div class="setas">
+                        <button type="button" id="btn-anterior" aria-label="Semana anterior" title="Semana anterior">‹</button>
+                        <button type="button" id="btn-hoje" class="btn-periodo" title="Voltar para a semana atual">--/-- a --/--</button>
+                        <button type="button" id="btn-proximo" aria-label="Próxima semana" title="Próxima semana">›</button>
+                    </div>
+                </div>
+                <div class="rolagem-calendario">
+                    <div class="tabela-calendario">
+                        <div class="cabecalho-tabela">
+                            <div class="hora-titulo">HORÁRIO</div>
+                            <div id="col-dia-0"><small>SEG</small><strong>—</strong></div>
+                            <div id="col-dia-1"><small>TER</small><strong>—</strong></div>
+                            <div id="col-dia-2"><small>QUA</small><strong>—</strong></div>
+                            <div id="col-dia-3"><small>QUI</small><strong>—</strong></div>
+                            <div id="col-dia-4"><small>SEX</small><strong>—</strong></div>
+                        </div>
+                        <div class="linha-horario" data-hora="09:00">
+                            <div class="hora">09:00</div>
+                            <div class="celula" data-dia="0"></div>
+                            <div class="celula" data-dia="1"></div>
+                            <div class="celula" data-dia="2"></div>
+                            <div class="celula" data-dia="3"></div>
+                            <div class="celula" data-dia="4"></div>
+                        </div>
+                        <div class="linha-horario" data-hora="10:00">
+                            <div class="hora">10:00</div>
+                            <div class="celula" data-dia="0"></div>
+                            <div class="celula" data-dia="1"></div>
+                            <div class="celula" data-dia="2"></div>
+                            <div class="celula" data-dia="3"></div>
+                            <div class="celula" data-dia="4"></div>
+                        </div>
+                        <div class="linha-horario" data-hora="11:00">
+                            <div class="hora">11:00</div>
+                            <div class="celula" data-dia="0"></div>
+                            <div class="celula" data-dia="1"></div>
+                            <div class="celula" data-dia="2"></div>
+                            <div class="celula" data-dia="3"></div>
+                            <div class="celula" data-dia="4"></div>
+                        </div>
+                        <div class="linha-horario" data-hora="14:00">
+                            <div class="hora">14:00</div>
+                            <div class="celula" data-dia="0"></div>
+                            <div class="celula" data-dia="1"></div>
+                            <div class="celula" data-dia="2"></div>
+                            <div class="celula" data-dia="3"></div>
+                            <div class="celula" data-dia="4"></div>
+                        </div>
+                        <div class="linha-horario" data-hora="15:00">
+                            <div class="hora">15:00</div>
+                            <div class="celula" data-dia="0"></div>
+                            <div class="celula" data-dia="1"></div>
+                            <div class="celula" data-dia="2"></div>
+                            <div class="celula" data-dia="3"></div>
+                            <div class="celula" data-dia="4"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>SAO · Sistema de Agendamento de Oitivas</footer>
+    </main>
+</body>
+</html>
